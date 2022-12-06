@@ -57,7 +57,7 @@ public class Board : MonoBehaviour {
 		}
 	}
 
-    private void SetUp(){
+    public void SetUp(){
 		GenerateBlankSpaces();
         for (int i = 0; i < width; i ++){
 			for (int j = 0; j < height; j++)
