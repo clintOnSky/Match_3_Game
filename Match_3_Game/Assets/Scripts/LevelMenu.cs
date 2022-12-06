@@ -8,7 +8,15 @@ public class LevelMenu : MonoBehaviour
 {
     public Text score;
     public float max;
-    public float current;
+    public float numOfClicks;
+    public float storedClicks;
+
+    public void Start()
+    {
+        storedClicks = PlayerPrefs.GetFloat("StoredClicks", 0);
+        numOfClicks = storedClicks;
+        score.text = storedClicks.ToString() + "/" + max.ToString();
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -22,10 +30,21 @@ public class LevelMenu : MonoBehaviour
 
     public void UpdateNumber()
     {
-        if (current < max)
+        if (numOfClicks < max)
         {
-            current++;
-            Debug.Log(current);
+            numOfClicks++;
+            score.text = numOfClicks.ToString() + "/" + max.ToString();
+            if (numOfClicks > storedClicks)
+            {
+                PlayerPrefs.SetFloat("StoredClicks", numOfClicks);
+            }
         }   
+    }
+
+    public void ResetNumber()
+    {
+        PlayerPrefs.DeleteKey("StoredClicks");
+        numOfClicks = 0f;
+        score.text = "0/" + max.ToString();
     }
 }

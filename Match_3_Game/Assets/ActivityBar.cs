@@ -12,6 +12,6 @@ public class ActivityBar : MonoBehaviour
     public void Update()
     {
         slider.maxValue = dailyLimit.max;
-        slider.value = dailyLimit.current;
+        slider.value = dailyLimit.numOfClicks;
     }
 }
