@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class LevelMenu : MonoBehaviour
 {
     public Text score;
+    public Text time;
     public float max;
     public float numOfClicks;
     public float storedClicks;
 
     public void Start()
     {
+        time.text = TimeManager.sharedInstance.GetCurrentDateTime().ToString();
         storedClicks = PlayerPrefs.GetFloat("StoredClicks", 0);
         numOfClicks = storedClicks;
         score.text = storedClicks.ToString() + "/" + max.ToString();
