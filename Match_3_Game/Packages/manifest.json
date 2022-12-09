@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.google.external-dependency-manager": "file:../GooglePackages/com.google.external-dependency-manager-1.2.174.tgz",
+    "com.google.firebase.app": "file:../GooglePackages/com.google.firebase.app-10.0.1.tgz",
+    "com.google.firebase.auth": "file:../GooglePackages/com.google.firebase.auth-10.0.1.tgz",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.ads": "3.7.5",
